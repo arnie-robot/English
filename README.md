@@ -12,4 +12,4 @@ This code is based on the GPosTTL library by Golam Mortuza Hossain, which is in 
 
 Looking at the previous licenses, they all seem versions of the MIT license. Hence this code is released under the MIT license for ease of use and future-compatibility.
 
-The original code is copyright MIT; changes copyright Chris Alexander.
+The original code is copyright MIT; changes copyright Chris Alexander. See the LICENSE file for more information.
