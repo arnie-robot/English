@@ -8,6 +8,6 @@
 /**
 * Plural Noun - plural name
 */
-class English_Token_PluralNoun extends English_Token
+class English_Token_Noun_Plural extends English_Token_Noun
 {
 }

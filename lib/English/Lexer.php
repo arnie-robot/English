@@ -72,7 +72,16 @@ class English_Lexer
 					$type = 'SingularQualifier';
 					break;
 				case 'NNS':
-					$type = 'PluralNoun';
+					$type = 'Noun_Plural';
+					break;
+				case 'NNPS':
+					$type = 'Noun_Proper_Plural';
+					break;
+				case 'FW':
+					$type = 'Foreign';
+					break;
+				case 'RBS':
+					$type = 'Adverb_Superlative';
 					break;
 				case 'VB':
 					$type = 'Verb';
@@ -86,8 +95,38 @@ class English_Lexer
 				case 'VBN':
 					$type = 'Verb_PastParticiple';
 					break;
+				case 'VBZ':
+					$type = 'Verb_PresentThirdSingular';
+					break;
+				case 'VBP':
+					$type = 'Verb_PresentPlural';
+					break;
+				case 'JJS':
+					$type = 'Adjective_SemanticSuperlative';
+					break;
+				case 'CD':
+					$type = 'CardinalNumeral';
+					break;
+				case 'CC':
+					$type = 'CoordinatingConjunction';
+					break;
 				case 'TO':
 					$type = 'InfinitiveMarker';
+					break;
+				case 'EX':
+					$type = 'ExistentialThere';
+					break;
+				case 'POS':
+					$type = 'ContractedIs';
+					break;
+				case 'WDT':
+					$type = 'Wh_Determiner';
+					break;
+				case 'WP$':
+					$type = 'Wh_Pronoun_Possessive';
+					break;
+				case 'WP':
+					$type = 'Wh_Pronoun_Nominative';
 					break;
 				case 'PRP$':
 					$type = 'Pronoun_PosessivePersonal';
@@ -101,17 +140,53 @@ class English_Lexer
 				case 'NN':
 					$type = 'Noun';
 					break;
+				case 'NNP':
+					$type = 'Noun_Proper';
+					break;
 				case 'MD':
 					$type = 'ModalAuxiliary';
 					break;
+				case 'RB':
+					$type = 'Adverb';
+					break;
+				case 'RP':
+					$type = 'Particle';
+					break;
+				case 'WRB':
+					$type = 'Wh_Adverb';
+					break;
 				case 'PRP':
 					$type = 'Pronoun_Personal';
+					break;
+				case 'PDT':
+					$type = 'Determiner';
+					break;
+				case 'UH':
+					$type = 'Interjection';
+					break;
+				case 'JJR':
+					$type = 'Adjective_Comparative';
 					break;
 				case ',':
 					$type = 'Punctuation_Comma';
 					break;
 				case '.':
 					$type = 'Punctuation_FullStop';
+					break;
+				case ':':
+					$type = 'Punctuation_Colon';
+					break;
+				case '(':
+					$type = 'Punctuation_Parenthesis_Opening';
+					break;
+				case ')':
+					$type = 'Punctuation_Parenthesis_Closing';
+					break;
+				case '"':
+					$type = 'Punctuation_Quote';
+					break;
+				case '':
+					$type = 'Unknown';
 					break;
 				default:
 					echo $separated[0] . ' - ' . $separated[1] . '<br />';
@@ -732,7 +807,10 @@ class English_Lexer
 	/**
 	* A list of tokens to replace out
 	*/
-	protected $token_list = array("\"", " \" ",",", " , ",";", " ; ",":", " : ","? ", " ? ","! ", " ! ",
+	protected $token_list = array(
+		"an'", "and",
+	
+		"\"", " \" ",",", " , ",";", " ; ",":", " : ","? ", " ? ","! ", " ! ",
 		". ", " .","[", " [ ","]", " ] "," (", " ( ",") ", " ) ",").", " ).","<", " < ",
 		">", " > ","--", " -- ","'s ", " 's ","'S ", " 'S ","'m ", " 'm ","'M ", " 'M ",
 		"'d ", " 'd ","'D ", " 'D ","'ll ", " 'll ","'re ", " 're ","'ve ", " 've ",
